@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { baseURL, searchURL } from "../utils/APIRoutes";
+import Header  from "../Components/Header";
+import Footer from "../Components/Footer";
+import Head from "../Components/Head";
 
 export default function Home() {
   const [meals, setMeals] = useState(null);
@@ -16,11 +19,15 @@ export default function Home() {
   
   
   return (
-    <div>
-      <h1>Home</h1>
-      <p>{JSON.stringify(meals)}</p>
-      <h1>Meals</h1>
-      <p></p>
-    </div>
+    <>
+    <Head/>
+    <body>
+      <Header/>
+        <div className="content">
+
+        </div>
+      <Footer/>
+    </body>
+    </>
   );
 }
