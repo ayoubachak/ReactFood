@@ -1,0 +1,23 @@
+.home-description{
+    font-size: 70px;
+    text-align: center;
+    color: #fff;
+    padding-top: 60px;
+}
+
+.home-description-highlight{
+    color:#F0B665;
+    font-weight: 600;
+}
+.section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 100px 40px 100px;
+}

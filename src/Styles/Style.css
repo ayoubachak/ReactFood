@@ -2,19 +2,127 @@
     margin: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+a{
+    text-decoration: none;
+}
 body{
-    /* background-color: cadetblue; */
+    background-image: url('../images/background blured.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    filter: blur(0px);
 }
 
 
 .logo{
     font-size: 40px;
+    font-weight: 600;
     display: flex;
     flex-direction:row;
 }
+.logo:hover{
+    cursor:pointer;
+}
+
 .last-logo-text{
     color:rgb(233,227,226);
 }
 .first-logo-text{
-    color:black;
+    color:white;
+}
+
+/* Search bar  */
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+.search-filters{
+    display: flex;
+    flex-direction: row;
+    /* gap: 10px; */
+    justify-content:center;
+    align-items:center;
+    height: 100%;
+
+    position: relative;
+}
+.search-input{
+    display: flex;
+    align-items:center;
+    height: 100%;
+    margin: 0px 10px 0px 10px;
+}
+.search-input>input{
+    height: 100%;
+    border:none;
+    padding:5px 5px 5px 25px;
+    background-color:rgba(0,0,0,0.05);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.search-filter{
+    /* padding:10px; */
+    padding: 0px 10px 0px 10px;
+    font-size: 20px;
+    font-weight: 400;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* border-left: 2px solid black; */
+    border-right: 2px solid black;
+}
+.search-filter:nth-child(2){
+    /* border-left: 2px solid black; */
+    border-right: none;
+}
+.search-filter:hover{
+    cursor: pointer;
+    border-radius: 10px;
+    background-color:rgba(0,0,0,0.05);
+}
+.search-icon:hover{
+    cursor: pointer;
+}
+.search-filter-inputs-container{
+    height: 300px;
+    overflow: auto;
+    position: absolute;
+    bottom: 42px;
+    right: -20px;
+    width: 185px;
+    background: white;
+    padding: 10px 5px 5px 20px;
+    border-radius: 10px;
+}
+.search-live-input{
+    position: relative;
+}
+.search-live{
+    max-height: 300px;
+    overflow: auto;
+    position: absolute;
+    bottom: 42px;
+    left: 7px;
+    width: 510px;
+    background: white;
+    padding: 10px 5px 5px 20px;
+    border-radius: 10px;
+}
+.search-result{
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+}
+.search-result-title{
+    font-weight: 500;
+}
+.search-result-instruction{
+    font-weight: 300;
+
+    overflow : hidden;
 }

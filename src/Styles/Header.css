@@ -12,9 +12,11 @@ header{
     align-items: center;
 }
 .nav-item>a{
-    color: black;
+    color: white;
     text-decoration: none;
     transition: all 0.3s;
+    font-size: 20px;
+    font-weight: 500;
 }
 .nav-item>a.active, .nav-item>a.active:hover{
     color: #F0B665;
@@ -29,6 +31,6 @@ header{
 }
 .social-media-icon{
     padding: 14px;
-    border: 1px solid #F4F5F4;
+    border: 2px solid #F4F5F4;
     border-radius: 8px;
 }

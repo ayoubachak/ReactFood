@@ -1,6 +1,6 @@
 import "./Styles/Style.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import Head from "./Components/Head";
 
 
 import Home  from "./Pages/Home.jsx";
@@ -10,6 +10,7 @@ import About from "./Pages/About.jsx";
 
 export default function App() {
   return (
+  <>
     <div id="root">
       <Router>
         <Routes>
@@ -20,5 +21,6 @@ export default function App() {
         </Routes>
       </Router>
     </div>
+  </>
   );
 }
