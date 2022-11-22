@@ -10,7 +10,7 @@ export const mealCategoriesURL = 'https://www.themealdb.com/api/json/v1/1/catego
 
 export const allCategoriesURL = 'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
 export const allAreasURL = 'https://www.themealdb.com/api/json/v1/1/list.php?a=list';
-export const allIngredientsURL = '  ';
+export const allIngredientsURL = 'https://www.themealdb.com/api/json/v1/1/list.php?i=list';
 
 // filters 
 export const filterByMainIngredientURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?i=';

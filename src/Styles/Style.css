@@ -126,3 +126,68 @@ body{
 
     overflow : hidden;
 }
+.search-result{
+    cursor: pointer;
+}
+.search-result-card{
+    width: 300px;
+    min-height: 400px;
+    border-radius: 20px;
+    background-color: white;
+}
+.search-result-thumbnail>img{
+    border-radius: 20px 20px 0px 0px;
+}
+
+.category-tag{
+    border-radius: 20px;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    width: 130px;
+    background-color: rgb(67, 146, 67);
+    border: 2px solid rgb(113, 216, 113);
+}
+.area-tag{
+    border-radius: 20px;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    width: 130px;
+    background-color: rgb(40, 105, 97);
+    border: 2px solid rgb(101, 213, 228);
+}
+.search-results{
+    justify-content:center;
+    display: flex;  
+    flex-wrap: wrap;
+    gap:50px;
+}
+.search-result-category{
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+}
+.search-result-description{
+    padding: 20px;
+}
+.search-result-meal-description{
+    overflow: hidden; 
+    max-height: 200px;
+    white-space: nowrap;
+    position: relative;
+}
+.continue-reading{
+    color: blue;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color:white;
+}
+.continue-reading:hover{
+    cursor: pointer;
+    color: rgb(27, 110, 110);
+}
+.heart-rect, .search-result-thumbnail, .search-result-meal-title{
+    cursor: pointer;	
+}
