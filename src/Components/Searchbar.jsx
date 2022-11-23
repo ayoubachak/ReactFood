@@ -18,6 +18,10 @@ import {
 
 export default function Searchbar(){
     const location = useLocation();
+    const [oldSearch, setOldSearch] = useState(localStorage.getItem("oldSearch")?localStorage.getItem("oldSearch"):"");
+    const storeOldSearch = () =>{
+        localStorage.setItem("oldSearch", oldSearch);
+    }
     //create the search object
     const [query, setQuery] = useState('');
     const [keyword, setKeyword] = useState('');
@@ -32,10 +36,10 @@ export default function Searchbar(){
     // form submission 
     const navigate = useNavigate();
     const onSubmit = e => {
-        if(location.pathname == '/'){
-            e.preventDefault();
-        }else if(location.pathname == '/results'){
+        if(location.pathname == '/results'){
             localStorage.setItem( 'search', search );
+        }else{
+            e.preventDefault();
         }
         // let's fill it from the form
         search.categories = categoryFilters;
@@ -51,6 +55,9 @@ export default function Searchbar(){
         const searchKey = e.target.value;
         setQuery(searchURL+searchKey); // this is here because I'll need it in the search results 
         setKeyword(searchKey);
+        
+        setOldSearch(searchKey);
+        storeOldSearch();
         const results = await axios.get(searchURL+searchKey);              
         // filter the Results
 
@@ -76,10 +83,14 @@ export default function Searchbar(){
                     return <div className="search-result" 
                         onClick={()=>{
                             const searchKey = searchResult.title;
-                            setQuery(searchURL+searchKey);
-                            setKeyword(searchKey);
+                            console.log(searchResult.title);
+                            search.query = searchURL+searchKey;
+                            search.keyword = searchKey;
                             search.categories = categoryFilters;
                             search.areas = areaFilters;
+                            setOldSearch(searchKey);
+                            storeOldSearch();
+                            console.log('search',search)
                             navigate('/results', { state: { search: search } });
                         }}>
                         <div className="search-result-title">
@@ -260,7 +271,7 @@ export default function Searchbar(){
                     {searchResultsRendered}
                 </div>
                 <div className="search-input">
-                    <input type="text" onChange={onChange} size="50" value={keyword}/>
+                    <input type="text" onChange={onChange} size="50" value={oldSearch}/>
                 </div>
             </div>
             <div className="search-filters">

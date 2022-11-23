@@ -16,7 +16,6 @@ export default function Meal(){
     if(location.state){
         loadedMeal = location.state.meal;
     }
-    console.log(params.id)
     const [theMeal, setTheMeal] = useState(null);
     useEffect(() => {
         if(loadedMeal){

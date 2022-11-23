@@ -6,6 +6,7 @@ import {
 } from '../utils/APIRoutes.js';
 import axios from "axios";
 import  {useNavigate} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
@@ -15,8 +16,14 @@ export default function Category(){
 
     const navigate = useNavigate();
     const location = useLocation();
-
-    var category = location.state.category;
+    const params = useParams();
+    
+    var category = "";
+    if(location.state){
+        category = location.state.category;
+    }else{
+        category = params.name;
+    }
     
     // get the saved state
     const [storedMeals, setStoredMeals] = useState(JSON.parse(localStorage.getItem("storedMeals"))?JSON.parse(localStorage.getItem("storedMeals")):{}); 
