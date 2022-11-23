@@ -1,0 +1,25 @@
+.allcategories{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding:20px;
+}
+.category{
+    height: 200px;
+    min-width: 200px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    color:white;
+    line-height:200px;
+    background:rgba(20, 83, 112, 0.377);
+    border-radius:50px;
+    box-shadow: 0 0 5px 5px rgba(20, 83, 112, 0.377);
+    transition: all 0.1s;
+}
+.category:hover{
+    cursor:pointer;
+    box-shadow: 0 0 10px 10px rgba(20, 83, 112, 0.377);
+  
+}

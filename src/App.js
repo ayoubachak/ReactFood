@@ -9,6 +9,7 @@ import Meal from "./Pages/Meal.jsx";
 import Categories from "./Pages/Categories.jsx";
 import About from "./Pages/About.jsx";
 import Results from "./Pages/Results.jsx";
+import Category from "./Pages/Category";
 export default function App() {
   return (
   <>
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/meals" element={<Meals />} />
           <Route path="/meals/:id" element={<Meal />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/category/:name" element={<Category/>} />
           <Route path="/about" element={<About />} />
           <Route path="/results" element={<Results />} />
         </Routes>

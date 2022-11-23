@@ -6,20 +6,25 @@ import "../Styles/Meal.css";
 import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
 import Searchbar from '../Components/Searchbar';
-
+import { useParams } from 'react-router-dom';
 
 
 export default function Meal(){
     const location = useLocation();
-    var loadedMeal = location.state.meal;
+    const params = useParams();
+    var loadedMeal = false;
+    if(location.state){
+        loadedMeal = location.state.meal;
+    }
+    console.log(params.id)
     const [theMeal, setTheMeal] = useState(null);
     useEffect(() => {
         if(loadedMeal){
             setTheMeal(loadedMeal);
         }else{
             const fetchMeal = async () => {
-                const mealFetched = await axios.get(mealByIdURL); 
-                const meal = mealFetched.data.meals;
+                const mealFetched = await axios.get(mealByIdURL+`${params.id}`); 
+                const meal = mealFetched.data.meals[0];
                 setTheMeal(meal);
             }
             fetchMeal();
