@@ -9,9 +9,9 @@ import {
 } from '../utils/APIRoutes.js';
 import axios from "axios";
 import  {useNavigate} from 'react-router-dom';
-
 import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
+import {appRoute} from '../utils/vars';
 
 const isIn = (element, array)=>{
     for (let i = 0; i < array.length; i++){
@@ -117,7 +117,7 @@ export default function Results(){
     }, [storedMeals, searchResults])
 
     const mealRedirect = (meal)=> {
-        navigate('/meals/'+meal.idMeal, { state: { meal: meal } });
+        navigate(appRoute + '/meals/'+meal.idMeal, { state: { meal: meal } });
     }
 
     const [searchResultsRendered, setSearchResultsRendered] = useState('');
@@ -131,12 +131,12 @@ export default function Results(){
                     <div className="search-result-description">
                         <div className="search-result-category">
                             <div className="category-tag" onClick={()=>{
-                                window.location.href = window.location.origin+"/category/"+searchResult.strCategory;
+                                window.location.href = window.location.origin+appRoute+"/category/"+searchResult.strCategory;
                             }}>
                                 {searchResult.strCategory}
                             </div>
                             <div className="area-tag" onClick={()=>{
-                                window.location.href = window.location.origin+"/area/"+searchResult.strArea;
+                                window.location.href = window.location.origin+appRoute+"/area/"+searchResult.strArea;
                             }}>
                                 {searchResult.strArea}
                             </div>

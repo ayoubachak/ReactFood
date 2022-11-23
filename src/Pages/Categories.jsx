@@ -7,6 +7,8 @@ import {
     allCategoriesURL
 } from '../utils/APIRoutes'
 import Searchbar from '../Components/Searchbar';
+import {appRoute} from '../utils/vars';
+
 
 export default function Categories(){
     const navigate = useNavigate();
@@ -39,7 +41,7 @@ export default function Categories(){
     },[categories])
     
     const categoryRedirect = (category) => {
-        navigate('/category/'+category, { state: { category: category } });
+        navigate(appRoute+'/category/'+category, { state: { category: category } });
     }
     return (
         <>

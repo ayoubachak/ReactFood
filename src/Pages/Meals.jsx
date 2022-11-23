@@ -10,6 +10,8 @@ import  {useNavigate} from 'react-router-dom';
 import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
 import '../Styles/Meals.css';
+import {appRoute} from '../utils/vars';
+
 
 const isIn = (element, array)=>{
     for (let i = 0; i < array.length; i++){
@@ -88,7 +90,7 @@ export default function Meals(){
     }, [storedMeals, meals])
 
     const mealRedirect = (meal)=> {
-        navigate('/meals/'+meal.idMeal, { state: { meal: meal } });
+        navigate(appRoute + '/meals/'+meal.idMeal, { state: { meal: meal } });
     }
 
     const rerenderAndSave = () => {

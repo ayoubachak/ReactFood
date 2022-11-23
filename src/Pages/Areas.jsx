@@ -7,6 +7,7 @@ import {
     allAreasURL
 } from '../utils/APIRoutes'
 import Searchbar from '../Components/Searchbar';
+import {appRoute} from '../utils/vars';
 
 export default function Areas(){
     const navigate = useNavigate();
@@ -39,7 +40,7 @@ export default function Areas(){
     },[areas])
     
     const areaRedirect = (area) => {
-        navigate('/area/'+area, { state: { area: area } });
+        navigate(appRoute+'/area/'+area, { state: { area: area } });
     }
     return (
         <>

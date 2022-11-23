@@ -2,6 +2,7 @@ import '../Styles/Header.css';
 import Instagram from '../images/icons/instagram.png';
 import Facebook from '../images/icons/facebook.png';
 import Logo from './Logo';
+import { appRoute } from '../utils/vars';
 
 export default function Header(){
     console.log(window.location)
@@ -11,19 +12,19 @@ export default function Header(){
                 <Logo/>
                 <div className="nav-items">
                     <div className="nav-item">
-                        <a href={window.location.origin+"/meals"} className="nav-link">Meals</a>
+                        <a href={window.location.origin+appRoute+"/meals"} className="nav-link">Meals</a>
                     </div>
                     <div className="nav-item">
-                        <a href={window.location.origin+"/categories"} className="nav-link">Categories</a>
+                        <a href={window.location.origin+appRoute+"/categories"} className="nav-link">Categories</a>
                     </div>
                     <div className="nav-item">
-                        <a href={window.location.origin+"/areas"} className="nav-link">Areas</a>
+                        <a href={window.location.origin+appRoute+"/areas"} className="nav-link">Areas</a>
                     </div>
                     <div className="nav-item">
-                        <a href={window.location.origin+"/liked"} className="nav-link">Liked</a>
+                        <a href={window.location.origin+appRoute+"/liked"} className="nav-link">Liked</a>
                     </div>
                     <div className="nav-item">
-                        <a href={window.location.origin+"/about"} className="nav-link">About</a>
+                        <a href={window.location.origin+appRoute+"/about"} className="nav-link">About</a>
                     </div>
                 </div>
                 <div className="social-media-icons">

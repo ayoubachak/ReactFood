@@ -14,6 +14,7 @@ import  {useNavigate} from 'react-router-dom';
 
 import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
+import {appRoute} from '../utils/vars';
 
 
 export default function Liked(){
@@ -90,7 +91,7 @@ export default function Liked(){
     console.log(likedMeals);
     const [likedMealsRendered, setLikedMealsRendered] = useState("");
     const mealRedirect = (meal)=> {
-        navigate('/meals/'+meal.idMeal, { state: { meal: meal } });
+        navigate(appRoute + '/meals/'+meal.idMeal, { state: { meal: meal } });
     }
     const rerenderAndSave = () => {
         setLikedMealsRendered(renderLikedMeals());
@@ -114,12 +115,12 @@ export default function Liked(){
                     <div className="search-result-description">
                         <div className="search-result-category">
                             <div className="category-tag" onClick={()=>{
-                                window.location.href = window.location.origin+"/category/"+meal.strCategory;
+                                window.location.href = window.location.origin+appRoute+"/category/"+meal.strCategory;
                             }}>
                                 {meal.strCategory}
                             </div>
                             <div className="area-tag" onClick={()=>{
-                                window.location.href = window.location.origin+"/area/"+meal.strArea;
+                                window.location.href = window.location.origin+appRoute+"/area/"+meal.strArea;
                             }}>
                                 {meal.strArea}
                             </div>

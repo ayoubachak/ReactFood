@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom';
 
 import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
+import {appRoute} from '../utils/vars';
 
 
 export default function Category(){
@@ -100,7 +101,7 @@ export default function Category(){
     }, [storedMeals, categories])
 
     const mealRedirect = (meal)=> {
-        navigate('/meals/'+meal.idMeal);
+        navigate(appRoute + '/meals/'+meal.idMeal);
     }
 
     const [categoriesRendered, setSategoriesRendered] = useState('');

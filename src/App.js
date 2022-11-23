@@ -13,22 +13,24 @@ import Category from "./Pages/Category";
 import Areas from "./Pages/Areas";
 import Area from "./Pages/Area";
 import Liked from "./Pages/Liked";
+import {appRoute} from './utils/vars.js';
 
 export default function App() {
   return (
   <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/meals" element={<Meals />} />
-          <Route path="/meals/:id" element={<Meal />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/category/:name" element={<Category/>} />
-          <Route path="/areas" element={<Areas />} />
-          <Route path="/area/:name" element={<Area/>} />
-          <Route path="/liked" element={<Liked />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/results" element={<Results />} />
+          <Route path={"/"} element={<Home/>} />
+          <Route path={appRoute+"/"} element={<Home/>} />
+          <Route path={appRoute+"/meals"} element={<Meals />} />
+          <Route path={appRoute+"/meals/:id"} element={<Meal />} />
+          <Route path={appRoute+"/categories"} element={<Categories />} />
+          <Route path={appRoute+"/category/:name"} element={<Category/>} />
+          <Route path={appRoute+"/areas"} element={<Areas />} />
+          <Route path={appRoute+"/area/:name"} element={<Area/>} />
+          <Route path={appRoute+"/liked"} element={<Liked />} />
+          <Route path={appRoute+"/about"} element={<About />} />
+          <Route path={appRoute+"/results"} element={<Results />} />
         </Routes>
       </Router>
   </>

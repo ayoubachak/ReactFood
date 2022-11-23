@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom';
 
 import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
+import {appRoute} from '../utils/vars';
 
 
 export default function Area(){
@@ -100,7 +101,7 @@ export default function Area(){
     }, [storedMeals, areas])
 
     const mealRedirect = (meal)=> {
-        navigate('/meals/'+meal.idMeal);
+        navigate(appRoute+'/meals/'+meal.idMeal);
     }
 
     const [areasRendered, setSategoriesRendered] = useState('');
@@ -114,7 +115,7 @@ export default function Area(){
                     <div className="search-result-description">
                         <div className="search-result-area">
                             <div className="area-tag"  onClick={()=>{
-                                window.location.href = window.location.origin+"/area/"+area;
+                                window.location.href = window.location.origin+appRoute+"/area/"+area;
                             }}>
                                 {area}
                             </div>

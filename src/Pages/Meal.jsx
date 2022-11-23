@@ -7,6 +7,7 @@ import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
 import Searchbar from '../Components/Searchbar';
 import { useParams } from 'react-router-dom';
+import {appRoute} from '../utils/vars';
 
 
 export default function Meal(){
@@ -119,10 +120,10 @@ export default function Meal(){
                     </div>
                     <div className="tags-and-reactions">
                         <div className="tags">
-                            <div className="category-tag" onClick={()=>{window.location.href = window.location.origin+"/category/"+theMeal.strCategory;}}>
+                            <div className="category-tag" onClick={()=>{window.location.href = window.location.origin+appRoute+"/category/"+theMeal.strCategory;}}>
                                 {theMeal.strCategory}
                             </div>
-                            <div className="area-tag" onClick={()=>{window.location.href = window.location.origin+"/area/"+theMeal.strArea;}}>
+                            <div className="area-tag" onClick={()=>{window.location.href = window.location.origin+appRoute+"/area/"+theMeal.strArea;}}>
                                 {theMeal.strArea}
                             </div>
                         </div>
