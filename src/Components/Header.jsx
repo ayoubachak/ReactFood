@@ -4,19 +4,20 @@ import Facebook from '../images/icons/facebook.png';
 import Logo from './Logo';
 
 export default function Header(){
+    console.log(window.location)
     return (
         <>
             <header>
                 <Logo/>
                 <div className="nav-items">
                     <div className="nav-item">
-                        <a href="meals" className="nav-link">Meals</a>
+                        <a href={window.location.origin+"/meals"} className="nav-link">Meals</a>
                     </div>
                     <div className="nav-item">
-                        <a href="categories" className="nav-link">Categories</a>
+                        <a href={window.location.origin+"/categories"} className="nav-link">Categories</a>
                     </div>
                     <div className="nav-item">
-                        <a href="about" className="nav-link">About</a>
+                        <a href={window.location.origin+"/about"} className="nav-link">About</a>
                     </div>
                 </div>
                 <div className="social-media-icons">

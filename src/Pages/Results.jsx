@@ -23,7 +23,7 @@ const isIn = (element, array)=>{
 export default function Results(){
     const location = useLocation();
     const navigate = useNavigate();
-    
+
     var searchState = location.state.search;
     var query = searchState.query;
     var keyword = searchState.keyword;
@@ -91,6 +91,7 @@ export default function Results(){
         localStorage.setItem("storedMeals", JSON.stringify(storedMeals));
     }
 
+    
     const [searchResults, setSearchResults] = useState(null);
     useEffect(() => {
       const fetchResults = async () => {
@@ -115,14 +116,17 @@ export default function Results(){
         rerenderAndSave();
     }, [storedMeals, searchResults])
 
+    const mealRedirect = (meal)=> {
+        navigate('/meals/'+meal.idMeal, { state: { meal: meal } });
+    }
 
     const [searchResultsRendered, setSearchResultsRendered] = useState('');
     const renderSearchResults = ()=>{
         if(searchResults){
             return searchResults.map((searchResult, index)=>{
                 return <div className="search-result-card" id={searchResult.idMeal}>
-                    <div className="search-result-thumbnail">
-                        <img src={searchResult.strMealThumb} width="300" alt={searchResult.strMealThumb}/>
+                    <div className="search-result-thumbnail" >
+                        <img src={searchResult.strMealThumb} onClick={()=>{mealRedirect(searchResult)}} width="300" alt={searchResult.strMealThumb}/>
                     </div>
                     <div className="search-result-description">
                         <div className="search-result-category">
@@ -142,12 +146,12 @@ export default function Results(){
                                 </div>
                             </div>
                         </div>
-                        <div className="search-result-meal-title">
+                        <div className="search-result-meal-title" onClick={()=>{mealRedirect(searchResult)}}>
                             <h3>{searchResult.strMeal}</h3>
                         </div>
                         <div className="search-result-meal-description">
                             {searchResult.strInstructions}
-                            <div className="continue-reading">
+                            <div className="continue-reading" onClick={()=>{mealRedirect(searchResult)}}>
                                 <u>..Read More</u>
                             </div>
                         </div>
@@ -158,15 +162,7 @@ export default function Results(){
             return <div><h1 style={{color: 'white'}}>No Results</h1></div>
         }
     } 
-
-    // reactions 
-    const [ heartReaction, setHeartReaction] = useState(emptyHeart);
-
-
     return <>
-        {/* <div style={{width: '70%', margin: '300px auto auto auto'}}>
-            <Searchbar/>
-        </div> */}
         <h1 style={{margin:10, color: 'white'}}>Search Results for : "{keyword}"</h1>
         <div className="search-results">
             {searchResultsRendered}

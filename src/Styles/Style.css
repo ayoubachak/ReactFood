@@ -113,6 +113,7 @@ body{
     padding: 10px 5px 5px 20px;
     border-radius: 10px;
 }
+
 .search-result{
     display: flex;
     flex-direction: row;
@@ -190,4 +191,23 @@ body{
 }
 .heart-rect, .search-result-thumbnail, .search-result-meal-title{
     cursor: pointer;	
+}
+
+
+footer{
+    background:rgba(255, 166, 0, 0.514);
+    height:50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top:30px;
+    box-shadow: 0 0 5px 10px rgba(255, 166, 0, 0.514);
+}
+.copyright{
+    width: 100%;
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+
 }
