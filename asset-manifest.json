@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ReactFood/static/css/main.0a54e207.css",
-    "main.js": "/ReactFood/static/js/main.eb29fdb6.js",
+    "main.js": "/ReactFood/static/js/main.b239173d.js",
     "static/media/background blured.jpg": "/ReactFood/static/media/background blured.e7165975b1b2ed83f2b9.jpg",
     "static/media/chef-nobg.png": "/ReactFood/static/media/chef-nobg.04b33671da10302ff0eb.png",
     "static/media/instagram.png": "/ReactFood/static/media/instagram.776d16d0e9daa177afd5.png",
@@ -9,10 +9,10 @@
     "static/media/heart-red.png": "/ReactFood/static/media/heart-red.4dabba7bad7ff5aaf177.png",
     "index.html": "/ReactFood/index.html",
     "main.0a54e207.css.map": "/ReactFood/static/css/main.0a54e207.css.map",
-    "main.eb29fdb6.js.map": "/ReactFood/static/js/main.eb29fdb6.js.map"
+    "main.b239173d.js.map": "/ReactFood/static/js/main.b239173d.js.map"
   },
   "entrypoints": [
     "static/css/main.0a54e207.css",
-    "static/js/main.eb29fdb6.js"
+    "static/js/main.b239173d.js"
   ]
 }
