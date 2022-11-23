@@ -113,10 +113,14 @@ export default function Liked(){
                     </div>
                     <div className="search-result-description">
                         <div className="search-result-category">
-                            <div className="category-tag">
+                            <div className="category-tag" onClick={()=>{
+                                window.location.href = window.location.origin+"/category/"+meal.strCategory;
+                            }}>
                                 {meal.strCategory}
                             </div>
-                            <div className="area-tag">
+                            <div className="area-tag" onClick={()=>{
+                                window.location.href = window.location.origin+"/area/"+meal.strArea;
+                            }}>
                                 {meal.strArea}
                             </div>
                             <div className="reactions">
@@ -152,6 +156,9 @@ export default function Liked(){
         <h1 style={{textAlign: 'center', color: 'white'}}>Your Liked Meals</h1>
         <div className="liked-meals">
             {likedMealsRendered}
+        </div>
+        <div style={{width: '70%', margin: '20px auto auto auto'}}>
+            <Searchbar/>
         </div>
     </>
 }

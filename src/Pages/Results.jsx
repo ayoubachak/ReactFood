@@ -91,7 +91,7 @@ export default function Results(){
         localStorage.setItem("storedMeals", JSON.stringify(storedMeals));
     }
 
-    
+
     const [searchResults, setSearchResults] = useState(null);
     useEffect(() => {
       const fetchResults = async () => {
@@ -130,10 +130,14 @@ export default function Results(){
                     </div>
                     <div className="search-result-description">
                         <div className="search-result-category">
-                            <div className="category-tag">
+                            <div className="category-tag" onClick={()=>{
+                                window.location.href = window.location.origin+"/category/"+searchResult.strCategory;
+                            }}>
                                 {searchResult.strCategory}
                             </div>
-                            <div className="area-tag">
+                            <div className="area-tag" onClick={()=>{
+                                window.location.href = window.location.origin+"/area/"+searchResult.strArea;
+                            }}>
                                 {searchResult.strArea}
                             </div>
                             <div className="reactions">
