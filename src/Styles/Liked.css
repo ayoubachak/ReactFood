@@ -1,0 +1,12 @@
+.liked-meals{
+    justify-content:center;
+    display: flex;  
+    flex-wrap: wrap;
+    gap:50px;
+}
+.liked-meal{
+    width: 300px;
+    min-height: 400px;
+    border-radius: 20px;
+    background-color: white;
+}

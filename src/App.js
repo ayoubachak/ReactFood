@@ -12,6 +12,8 @@ import Results from "./Pages/Results.jsx";
 import Category from "./Pages/Category";
 import Areas from "./Pages/Areas";
 import Area from "./Pages/Area";
+import Liked from "./Pages/Liked";
+
 export default function App() {
   return (
   <>
@@ -24,6 +26,7 @@ export default function App() {
           <Route path="/category/:name" element={<Category/>} />
           <Route path="/areas" element={<Areas />} />
           <Route path="/area/:name" element={<Area/>} />
+          <Route path="/liked" element={<Liked />} />
           <Route path="/about" element={<About />} />
           <Route path="/results" element={<Results />} />
         </Routes>

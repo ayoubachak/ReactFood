@@ -20,6 +20,9 @@ export default function Header(){
                         <a href={window.location.origin+"/areas"} className="nav-link">Areas</a>
                     </div>
                     <div className="nav-item">
+                        <a href={window.location.origin+"/liked"} className="nav-link">Liked</a>
+                    </div>
+                    <div className="nav-item">
                         <a href={window.location.origin+"/about"} className="nav-link">About</a>
                     </div>
                 </div>
