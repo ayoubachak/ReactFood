@@ -10,6 +10,8 @@ import Categories from "./Pages/Categories.jsx";
 import About from "./Pages/About.jsx";
 import Results from "./Pages/Results.jsx";
 import Category from "./Pages/Category";
+import Areas from "./Pages/Areas";
+import Area from "./Pages/Area";
 export default function App() {
   return (
   <>
@@ -20,8 +22,8 @@ export default function App() {
           <Route path="/meals/:id" element={<Meal />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/category/:name" element={<Category/>} />
-          <Route path="/areas" element={<Categories />} />
-          <Route path="/area/:name" element={<Category/>} />
+          <Route path="/areas" element={<Areas />} />
+          <Route path="/area/:name" element={<Area/>} />
           <Route path="/about" element={<About />} />
           <Route path="/results" element={<Results />} />
         </Routes>

@@ -2,7 +2,7 @@ import {useLocation} from 'react-router-dom';
 import { useEffect, useState } from "react";
 import Searchbar from '../Components/Searchbar';
 import {
-    filterByCategoryURL
+    filterByAreaURL
 } from '../utils/APIRoutes.js';
 import axios from "axios";
 import  {useNavigate} from 'react-router-dom';
@@ -12,17 +12,17 @@ import emptyHeart from '../images/icons/heart.png';
 import heart from '../images/icons/heart-red.png'
 
 
-export default function Category(){
+export default function Area(){
 
     const navigate = useNavigate();
     const location = useLocation();
     const params = useParams();
     
-    var category = "";
+    var area = "";
     if(location.state){
-        category = location.state.category;
+        area = location.state.area;
     }else{
-        category = params.name;
+        area = params.name;
     }
     
     // get the saved state
@@ -80,10 +80,10 @@ export default function Category(){
     }
 
     
-    const [categories, setSategories] = useState(null);
+    const [areas, setSategories] = useState(null);
     useEffect(() => {
       const fetchResults = async () => {
-        const results = await axios.get(filterByCategoryURL+category); 
+        const results = await axios.get(filterByAreaURL+area); 
         const unfiltredResults = results.data.meals;
         setSategories(unfiltredResults);
       }
@@ -97,24 +97,26 @@ export default function Category(){
     }
     useEffect(() => {
         rerenderAndSave();
-    }, [storedMeals, categories])
+    }, [storedMeals, areas])
 
     const mealRedirect = (meal)=> {
         navigate('/meals/'+meal.idMeal);
     }
 
-    const [categoriesRendered, setSategoriesRendered] = useState('');
+    const [areasRendered, setSategoriesRendered] = useState('');
     const renderSategories = ()=>{
-        if(categories){
-            return categories.map((searchResult, index)=>{
+        if(areas){
+            return areas.map((searchResult, index)=>{
                 return <div className="search-result-card" id={searchResult.idMeal}>
                     <div className="search-result-thumbnail" >
                         <img src={searchResult.strMealThumb} onClick={()=>{mealRedirect(searchResult)}} width="300" alt={searchResult.strMealThumb}/>
                     </div>
                     <div className="search-result-description">
-                        <div className="search-result-category">
-                            <div className="category-tag" onClick={()=>{window.location.href = window.location.origin+"/category/"+category;}}>
-                                {category}
+                        <div className="search-result-area">
+                            <div className="area-tag"  onClick={()=>{
+                                window.location.href = window.location.origin+"/area/"+area;
+                            }}>
+                                {area}
                             </div>
                             <div className="reactions">
                                 <div className="heart-rect">            
@@ -144,9 +146,9 @@ export default function Category(){
     }
 
     return <>
-        <h1 style={{textAlign: 'center', color:'white'}}>All for category {category} </h1>
+        <h1 style={{textAlign: 'center', color:'white'}}>All for area {area} </h1>
         <div className="search-results">
-            {categoriesRendered}
+            {areasRendered}
         </div>
         <div style={{width: '70%', margin: '20px auto auto auto'}}>
             <Searchbar/>

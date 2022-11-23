@@ -119,10 +119,10 @@ export default function Meal(){
                     </div>
                     <div className="tags-and-reactions">
                         <div className="tags">
-                            <div className="category-tag">
+                            <div className="category-tag" onClick={()=>{window.location.href = window.location.origin+"/category/"+theMeal.strCategory;}}>
                                 {theMeal.strCategory}
                             </div>
-                            <div className="area-tag">
+                            <div className="area-tag" onClick={()=>{window.location.href = window.location.origin+"/area/"+theMeal.strArea;}}>
                                 {theMeal.strArea}
                             </div>
                         </div>

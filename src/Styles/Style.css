@@ -149,6 +149,9 @@ body{
     background-color: rgb(67, 146, 67);
     border: 2px solid rgb(113, 216, 113);
 }
+.category-tag:hover{
+    cursor: pointer;
+}
 .area-tag{
     border-radius: 20px;
     color: white;
@@ -158,6 +161,9 @@ body{
     background-color: rgb(40, 105, 97);
     border: 2px solid rgb(101, 213, 228);
 }
+.area-tag:hover{
+    cursor: pointer;
+}
 .search-results{
     justify-content:center;
     display: flex;  
@@ -165,6 +171,11 @@ body{
     gap:50px;
 }
 .search-result-category{
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+}
+.search-result-area{
     display: flex;
     justify-content:space-between;
     gap: 10px;
